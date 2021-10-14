@@ -1,5 +1,7 @@
 package LabSheet5.exercise3;
 
+import javax.swing.*;
+
 public class Thermometer {
 
     private int currentTemp;
@@ -45,9 +47,10 @@ public class Thermometer {
 
 
 
-    public  void setTemperature(int userTemp){
+    public  void setTemperature(){
 
-        this.currentTemp = userTemp;
+        this.currentTemp = Integer.parseInt(JOptionPane.showInputDialog("Please enter the current temp of the first thermometer"));
+
         //this.maximumTemp = userTemp;
         //this.minimumTemp = userTemp;
 
