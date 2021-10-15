@@ -13,8 +13,6 @@ public class Person {
     }
 
     public Person(String firstName, String lastName){
-       firstName = JOptionPane.showInputDialog("Please enter first name");
-       lastName = JOptionPane.showInputDialog("Please enter last name");
         this.setFirstName(firstName);
         this.setLastName(lastName);
     }
