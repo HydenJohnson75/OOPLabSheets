@@ -69,27 +69,33 @@ public class Animal {
 	}
 	
 	//displaying the state of the objects attributes indirectly via the accessors
-	
+
 	public String toString() {
-		 String str = "Animal Type: " + getType() + "\nAnimal Weight: " + getWeight() +
-				      "\nAnimal Age: " + getAge() + "\nAnimal Continents: ";
+		String str = "Animal Type: " + getType();
 
-		 if(continents==null) //i.e. no array object exists=>no continents either
-				{
-				 str+="No continents specified";
-				 return str;
-				}
+		if(weight==0)
+			str+="\nAnimal Weight: No weight specified";
+		else
+			str+="\nAnimal Weight: " + getWeight();
 
-		 if(getWeight() == 0){
+		if(age==0)
+			str+="\nAnimal Age: No age specified";
+		else
+			str+="\nAnimal Age: " + getAge() ;
 
-		 }
-				
+		str+="\nAnimal Continents: ";
+		if(continents==null) //i.e. no array object exists=>no continents either
+		{
+			str+="No continents specified";
+			return str;
+		}
+
 		/*if we get to here then there must have been an array object created
 		so traverse it using a loop and "join" its contents to the existing
 		  string object*/
 
-		 for(int i=0;i< getContinents().length;i++)
-				str+=continents[i] + " ";
-		 return str;
+		for(int i=0;i< getContinents().length;i++)
+			str+=continents[i] + " ";
+		return str;
 	}
 }
