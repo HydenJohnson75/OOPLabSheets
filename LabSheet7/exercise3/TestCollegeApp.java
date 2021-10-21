@@ -32,5 +32,27 @@ public class TestCollegeApp {
 
         System.out.println("\n\n\n" + deptName[0]);
 
+        for(int i = 0; i < deptName.length; i++){
+            if(deptName[i] != null && deptName[i] == computing ){
+                for(int j = 0; j < computingStudents.length; j++){
+                    if(computingStudents[j] != null && computingStudents[j].getId() == 154345){
+                        System.out.println("\n\nWe found JAKE!!!!");
+
+                        s1.setDepartment("Creative Media");
+
+                        cmStudents[2] = s1;
+                        computingStudents[0] = null;
+
+                        System.out.println("\n\n" + i1);
+
+                    }
+                    else{
+                        System.out.println("Sorry student could not be found");
+                    }
+                }
+            }
+        }
+
+
     }
 }
