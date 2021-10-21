@@ -27,7 +27,7 @@ public class Institute {
     }
 
     public String toString(){
-        String str = "Name: " + getName() + "\n\nDepartments: ";
+        String str = "Name: " + getName() + "\n\nDepartments: ";// + getDepartments();
 
         for(int i = 0; i < getDepartments().length; i++){
             if(departments[i] != null){
@@ -39,19 +39,24 @@ public class Institute {
 
     public int getTotalStudents(){
         int total = 0;
-        Student[] students;
+        Student students[];
 
-        for(int i = 0; i< getDepartments().length; i++){
-            if(departments[i] != null){
+
+
+        for (int i = 0; i < departments.length; i++) {
+            if (departments[i] != null){
                 students = departments[i].getStudents();
 
-                for(int j=0; j < students.length; j++){
-                    total++;
+                for(int j = 0; j < students.length; j++){
+                    if(students[j] != null){
+                        total++;
+                    }
+
                 }
             }
 
-        }
 
+        }
         return total;
     }
 
