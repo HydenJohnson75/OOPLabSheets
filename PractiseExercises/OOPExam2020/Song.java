@@ -9,11 +9,9 @@ public class Song {
     private int duration;
     private int releaseYear;
 
-    public Song() {
-        this("Not Specified", "Not Specified", "Not Specified",0,0);
-    }
 
     public Song(String title, String artist, String genre, int duration, int releaseYear) {
+        setTrackNumber();
         setTitle(title);
         setArtist(artist);
         setGenre(genre);
@@ -21,20 +19,12 @@ public class Song {
         setReleaseYear(releaseYear);
     }
 
-    public static int getTrackID() {
-        return trackID;
-    }
-
-    public static void setTrackID(int trackID) {
-        Song.trackID = trackID;
-    }
-
     public int getTrackNumber() {
         return trackNumber;
     }
 
-    private void setTrackNumber(int trackNumber) {
-        this.trackNumber = trackNumber;
+    private void setTrackNumber() {
+        this.trackNumber = ++trackID;
     }
 
     public String getTitle() {
@@ -79,9 +69,9 @@ public class Song {
 
     @Override
     public String toString() {
-        return "\nTrack ID:" + getTrackID() + "\nTrack Number: " + getTrackNumber() + "\nTitle: " + getTitle()+
-                "\nArtist: " + getArtist() + "\nGenre: " + getGenre() + "\nDuration: " + getDuration() +
-                "\nRelease Year: " + getReleaseYear();
+        return  "\n\nTrack Number: " + getTrackNumber() + "   Title: " + getTitle()+
+                "   Artist: " + getArtist() + "   Genre: " + getGenre() + "   Duration: " + getDuration() +
+                "   Release Year: " + getReleaseYear();
 
     }
 }

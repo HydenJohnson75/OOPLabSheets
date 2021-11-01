@@ -1,5 +1,6 @@
 package PractiseExercises.OOPExam2020;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Album {
@@ -9,13 +10,6 @@ public class Album {
     private String producer;
     private int releaseYear;
 
-    public Album() {
-        setName(getName());
-        setTracks(null);
-        setProducer("Not specified");
-        setReleaseYear(0000);
-
-    }
 
     public Album(String name, Song[] tracks, String producer, int releaseYear) {
         setName(name);
@@ -29,11 +23,10 @@ public class Album {
     }
 
     public void setName(String name) {
-        this.name = name;
-
-        if (name == "" || name == null) {
+        if (name == null || name == "") {
             this.name = "No name specified";
-        }
+        } else
+            this.name = name;
     }
 
     public Song[] getTracks() {
@@ -62,14 +55,22 @@ public class Album {
 
     @Override
     public String toString() {
-        String str = "Name: " + getName() + "\nProducer: " + getProducer() + "\nRelease Year: " + getReleaseYear() + "\nTrakcs: ";
+        return "Name: " + getName() + "\n\nProducer: " + getProducer() + "\n\nRelease Year: " + getReleaseYear() + "\n\nTracks: " + Arrays.toString(tracks);
 
-        for (int i = 0; i < getTracks().length; i++) {
-            if (tracks[i] != null) {
-                str += tracks[i];
-            }
+
+    }
+
+    public int getNumberOfTracks() {
+        return tracks.length;
+    }
+
+    public int getPlayingTime(){
+        int totaltime = 0;
+        for(int i=0;i < tracks.length;i++){
+            totaltime+= tracks[i].getDuration();
 
         }
-        return str;
+
+        return totaltime;
     }
 }
