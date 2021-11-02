@@ -1,5 +1,6 @@
 package PractiseExercises.OOPExam2020;
 
+
 public class Song {
     private static int trackID;
     private int trackNumber;
@@ -9,11 +10,9 @@ public class Song {
     private int duration;
     private int releaseYear;
 
-    public Song() {
-        this("Not Specified", "Not Specified", "Not Specified",0,0);
-    }
-
     public Song(String title, String artist, String genre, int duration, int releaseYear) {
+        trackID++;
+        setTrackNumber();
         setTitle(title);
         setArtist(artist);
         setGenre(genre);
@@ -21,20 +20,12 @@ public class Song {
         setReleaseYear(releaseYear);
     }
 
-    public static int getTrackID() {
-        return trackID;
-    }
-
-    public static void setTrackID(int trackID) {
-        Song.trackID = trackID;
+    private void setTrackNumber() {
+        this.trackNumber = trackID;
     }
 
     public int getTrackNumber() {
         return trackNumber;
-    }
-
-    private void setTrackNumber(int trackNumber) {
-        this.trackNumber = trackNumber;
     }
 
     public String getTitle() {
@@ -77,11 +68,9 @@ public class Song {
         this.releaseYear = releaseYear;
     }
 
-    @Override
     public String toString() {
-        return "\nTrack ID:" + getTrackID() + "\nTrack Number: " + getTrackNumber() + "\nTitle: " + getTitle()+
-                "\nArtist: " + getArtist() + "\nGenre: " + getGenre() + "\nDuration: " + getDuration() +
-                "\nRelease Year: " + getReleaseYear();
-
+        return "Track number: " + getTrackNumber() + "  Title: " + getTitle() + "  "
+                + "Artist: " + getArtist() + "  Genre: " + getGenre() +
+                "   Release year: " + getReleaseYear() + "  Duration: " + getDuration();
     }
 }
