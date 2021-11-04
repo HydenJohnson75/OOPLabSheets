@@ -1,4 +1,4 @@
-package LabSheet8.exercise1;
+package LabSheet8.exercise2;
 
 public class Vehicle {
 
@@ -77,6 +77,7 @@ public class Vehicle {
     public void setModel(String model) {
         this.model = model;
     }
+
 
     @Override
     public String toString() {
