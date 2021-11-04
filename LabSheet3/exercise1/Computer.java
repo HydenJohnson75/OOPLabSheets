@@ -1,7 +1,6 @@
 package LabSheet3.exercise1;
 
-
-public class Computer {
+  public class Computer {
     private String manufacturer;
     private String type;
     private double speed;
@@ -25,7 +24,7 @@ public class Computer {
         this.price = price;
     }
 
-    public String getManufacturer() {
+     String getManufacturer() {
         return manufacturer;
     }
 
