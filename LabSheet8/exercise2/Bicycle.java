@@ -1,6 +1,4 @@
-package LabSheet8.exercise1;
-
-import javax.swing.*;
+package LabSheet8.exercise2;
 
 public class Bicycle extends Vehicle {
 

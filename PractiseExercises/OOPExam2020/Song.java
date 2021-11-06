@@ -1,5 +1,6 @@
 package PractiseExercises.OOPExam2020;
 
+
 public class Song {
     private static int trackID;
     private int trackNumber;
@@ -9,8 +10,8 @@ public class Song {
     private int duration;
     private int releaseYear;
 
-
     public Song(String title, String artist, String genre, int duration, int releaseYear) {
+        trackID++;
         setTrackNumber();
         setTitle(title);
         setArtist(artist);
@@ -19,12 +20,12 @@ public class Song {
         setReleaseYear(releaseYear);
     }
 
-    public int getTrackNumber() {
-        return trackNumber;
+    private void setTrackNumber() {
+        this.trackNumber = trackID;
     }
 
-    private void setTrackNumber() {
-        this.trackNumber = ++trackID;
+    public int getTrackNumber() {
+        return trackNumber;
     }
 
     public String getTitle() {
@@ -67,11 +68,9 @@ public class Song {
         this.releaseYear = releaseYear;
     }
 
-    @Override
     public String toString() {
-        return  "\n\nTrack Number: " + getTrackNumber() + "   Title: " + getTitle()+
-                "   Artist: " + getArtist() + "   Genre: " + getGenre() + "   Duration: " + getDuration() +
-                "   Release Year: " + getReleaseYear();
-
+        return "Track number: " + getTrackNumber() + "  Title: " + getTitle() + "  "
+                + "Artist: " + getArtist() + "  Genre: " + getGenre() +
+                "   Release year: " + getReleaseYear() + "  Duration: " + getDuration();
     }
 }
