@@ -37,25 +37,33 @@ public class TestComputer {
                            "\nDetails of highest speed computer: " + highestSpeedComputer);
 
 
+        String strOver500 = "\n\nThe list of objects that excede the price of 500: ";
+        String strTablet = "\n\nThe list of devices that are tablets: ";
+
         for (Computer c:allComputers) {
             if(c.getPrice() > 500){
-                System.out.println("\n\nThe list of comps that excede 500: \n"+ c);
+                 strOver500 += "\n" + c;
             }
 
             if(c.getType().equals("Tablet")){
-                System.out.println("\n\n "+c);
+                strTablet += "\n" + c;
             }
 
         }
 
+        System.out.println(strOver500 + strTablet);
+
+
+        System.out.println("Updated details of all computers in the array\n\n");
         for(Computer c:allComputers){
-            if(c.getManufacturer() == "Lenovo"){
+            if(c.getManufacturer().equals("Lenovo")){
                 c.setManufacturer("Dell");
             }
 
-            System.out.println("\n\nNew objects: \n" + c);
-
+            System.out.println(c);
         }
+
+
     }
 
 
